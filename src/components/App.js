@@ -9,7 +9,7 @@ const App = ()=> {
 
     function func () {
         if(name=="" || pass=="") {
-            setError("Both username and password are required")
+            setError("Both username and password are required.")
         }
     }
     return (
