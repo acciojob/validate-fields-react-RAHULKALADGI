@@ -11,6 +11,9 @@ const App = ()=> {
         if(name=="" || pass=="") {
             setError("Both username and password are required.")
         }
+        else if (name!=="" && pass!=="") {
+            setError("");
+        }
     }
     return (
         <div>
@@ -19,9 +22,15 @@ const App = ()=> {
             <label for="password">Password:</label>
             <input type="password" onChange={(event)=>setPass(event.target.value)}/>
             <button onClick={func}>Login</button>
-            <p id="errorMessage">{error}</p>
+            {error && (<Error mess="Both username and password are required."/>)}
         </div>
     )
+}
+
+function Error (props) {
+return (
+    <p id="errorMessage">{props.mess}</p>
+)
 }
 
 export default App
